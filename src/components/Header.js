@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container">
         <div className="d-flex header-height align-items-center justify-content-between">
           <Link to="/" className="logo">
-            Logo
+            <h4>razempiddachem</h4>
           </Link>
           <div className="menu">
             <Link to="find" className="btn btn-danger">
@@ -16,9 +16,6 @@ const Header = () => {
             <Link to="add" className="btn btn-success" style={{ marginLeft: 20 }}>
               Zapewnij mieszkanie
             </Link>
-            {/*<div className="btn btn-primary" style={{ marginLeft: 20 }}>*/}
-            {/*  Zaloguj*/}
-            {/*</div>*/}
           </div>
         </div>
       </div>
