@@ -1,35 +1,8 @@
 import axios from 'axios';
 
 const Endpoint = {
-  regions: 'regionsURL'
+  offers: 'offersURL'
 };
-
-const REGIONS_MOCK = [
-  {
-    value: 'LUBLIN',
-    label: 'Lublin'
-  },
-  {
-    value: 'GDANSK',
-    label: 'Gdańsk'
-  },
-  {
-    value: 'OLSZTYN',
-    label: 'Olsztyn'
-  },
-  {
-    value: 'BIALYSTOK',
-    label: 'Białystok'
-  },
-  {
-    value: 'SZCZECIN',
-    label: 'Szczecin'
-  },
-  {
-    value: 'BYDGOSZCZ',
-    label: 'Bydgoszcz'
-  }
-];
 
 export default class ApiClient {
   constructor() {
@@ -38,10 +11,11 @@ export default class ApiClient {
     });
   }
 
-  async getRegions() {
+  async getOffers() {
     try {
+      console.log('get offers');
       // await this.API.get(Endpoint.regions);
-      return REGIONS_MOCK;
+      return [{test: 'test'}];
     } catch (e) {
       throw e;
     }
