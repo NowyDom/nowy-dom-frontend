@@ -2,13 +2,9 @@ import Select from 'react-select';
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { MAX_NUMBER_OF_PEOPLE_LIST } from '../consts';
-
-const CITIES_MOCK = [
-  { value: 'warszawa', label: 'warszawa' },
-  { value: 'poznan', label: 'poznan' },
-  { value: 'gdansk', label: 'gdansk' }
-];
+import { MAX_NUMBER_OF_PEOPLE, REGIONS_LIST } from '../consts';
+import { useDispatch } from 'react-redux';
+import { setOffer } from '../actions';
 
 const createSelectValuesWithNumbers = number => {
   return [...Array(number).keys()].map(item => {
@@ -17,17 +13,26 @@ const createSelectValuesWithNumbers = number => {
 };
 
 const AddApartmentScreen = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const formData = new FormData(e.target),
+      formDataObj = Object.fromEntries(formData.entries());
+    dispatch(setOffer(formDataObj));
+  };
   return (
     <div className="add-apartment-wrapper pt-4">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-7">
-            <Form className="form-wrapper">
+            <Form className="form-wrapper" onSubmit={handleSubmit}>
               <h1>Dodaj ogłoszenie</h1>
               <Form.Group className="form-input pt-3">
                 <Form.Label>Wybierz region</Form.Label>
                 <Select
-                  options={CITIES_MOCK}
+                  name="region"
+                  options={REGIONS_LIST}
                   isSearchable
                   isClearable
                   placeholder="Wybierz region"
@@ -35,20 +40,25 @@ const AddApartmentScreen = () => {
               </Form.Group>
               <Form.Group className="form-input pt-3">
                 <Form.Label>Telefon kontaktowy</Form.Label>
-                <Form.Control type="text" placeholder="Numer telefonu" />
+                <Form.Control name="phone" type="text" placeholder="Numer telefonu" />
+              </Form.Group>
+              <Form.Group className="form-input pt-3">
+                <Form.Label>Email</Form.Label>
+                <Form.Control name="email" type="email" placeholder="Email" />
               </Form.Group>
               <Form.Group className="form-input pt-3">
                 <Form.Label>Określ lokalizację</Form.Label>
-                <Form.Control type="text" placeholder="Lokalizacja" />
+                <Form.Control name="location" type="text" placeholder="Lokalizacja" />
               </Form.Group>
               <Form.Group className="form-input pt-3">
                 <Form.Label>Link do lokalizacji na mapie google</Form.Label>
-                <Form.Control type="text" placeholder="Link" />
+                <Form.Control name="mapLink" type="text" placeholder="Link" />
               </Form.Group>
               <Form.Group className="form-input pt-3">
                 <Form.Label>Liczba osób, którą możesz przyjąć</Form.Label>
                 <Select
-                  options={createSelectValuesWithNumbers(MAX_NUMBER_OF_PEOPLE_LIST)}
+                  name="numberOfPeople"
+                  options={createSelectValuesWithNumbers(MAX_NUMBER_OF_PEOPLE)}
                   isSearchable
                   isClearable
                   placeholder="Podaj liczbę osób"
@@ -56,7 +66,12 @@ const AddApartmentScreen = () => {
               </Form.Group>
               <Form.Group className="form-input pt-3">
                 <Form.Label>Dodatkowe uwagi lub ostrzeżenia</Form.Label>
-                <Form.Control as="textarea" rows={3} placeholder="Dodatkowe uwagi" />
+                <Form.Control
+                  name="info"
+                  as="textarea"
+                  rows={3}
+                  placeholder="Dodatkowe uwagi"
+                />
               </Form.Group>
               <Button
                 className="btn btn-primary btn-large centerButton mt-4"

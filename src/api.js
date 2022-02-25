@@ -21,4 +21,16 @@ export default class ApiClient {
       throw e;
     }
   }
+
+  async setOffer(params) {
+    try {
+      console.log('set offer');
+      console.log(params);
+      // await this.API.post(Endpoint.regions);
+    } catch (e) {
+      throw e;
+    }
+  }
+
+
 }
