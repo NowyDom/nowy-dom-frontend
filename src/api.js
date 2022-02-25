@@ -15,10 +15,8 @@ export default class ApiClient {
 
   async getOffers(params) {
     try {
-      console.log('get offers');
-      console.log(params);
-      // await this.API.get(Endpoint.regions);
-      return [{ test: 'test' }];
+      const response = await this.API.get(Endpoint.offers);
+      return response.data;
     } catch (e) {
       throw e;
     }
@@ -26,9 +24,7 @@ export default class ApiClient {
 
   async setOffer(params) {
     try {
-      console.log('set offer');
-      console.log(params);
-      await this.API.post(Endpoint.regions, params);
+      await this.API.post(Endpoint.offers, params);
     } catch (e) {
       throw e;
     }

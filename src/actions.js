@@ -22,8 +22,10 @@ export const setOffer = params => {
         persons: parseInt(params.numberOfPeople, 10),
         region: params.region,
         address: params.location,
-        description: params.info,
-        phoneNumber: params.phone
+        description: params.info && !!params.info.length ? params.info : null,
+        phoneNumber: params.phone,
+        email: params.email,
+        googleMapsLink: params.mapLink && !!params.mapLink.length ? params.mapLink : null,
       }
       await api.setOffer(preparedParams);
     } catch (e) {

@@ -17,9 +17,9 @@ const FindApartmentScreen = () => {
       <div className="container">
         <h1 className="mb-4">Znajdź ogłoszenie</h1>
         <Filters />
-        {offers.map(item => {
-          return <ResultView />;
-        })}
+        {offers.map(item => (
+          <ResultView key={item.id} offer={item} />
+        ))}
       </div>
     </div>
   );
