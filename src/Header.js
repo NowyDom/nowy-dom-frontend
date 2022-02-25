@@ -16,9 +16,9 @@ const Header = () => {
             <Link to="add" className="btn btn-success" style={{ marginLeft: 20 }}>
               Zapewnij mieszkanie
             </Link>
-            <div className="btn btn-primary" style={{ marginLeft: 20 }}>
-              Zaloguj
-            </div>
+            {/*<div className="btn btn-primary" style={{ marginLeft: 20 }}>*/}
+            {/*  Zaloguj*/}
+            {/*</div>*/}
           </div>
         </div>
       </div>
