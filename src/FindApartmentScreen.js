@@ -1,4 +1,5 @@
 import Filters from './Filters';
+import ResultView from './ResultView';
 
 const FindApartmentScreen = () => {
   return (
@@ -9,6 +10,7 @@ const FindApartmentScreen = () => {
           Pokazuje: <strong>48</strong> z <strong>1059</strong>
         </h4>
         <Filters />
+        <ResultView />
       </div>
     </div>
   );
