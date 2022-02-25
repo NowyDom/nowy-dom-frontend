@@ -22,6 +22,7 @@ const AddApartmentScreen = () => {
   const isRequired = value => REQUIRED_FIELDS.includes(value);
 
   const validateAll = data => {
+    let allDataIsCorrect = true;
     let actualErrors = {};
     Object.keys(data).forEach(item => {
       if (!isRequired(item) || validateRequired(data[item])) {
@@ -30,13 +31,15 @@ const AddApartmentScreen = () => {
           [item]: null
         };
       } else {
+        allDataIsCorrect = false;
         actualErrors = {
           ...actualErrors,
           [item]: REQUIRED_INFO
         };
       }
     });
-    return actualErrors;
+    setErrors(actualErrors);
+    return allDataIsCorrect;
   };
 
   const showErrors = item => {
@@ -47,8 +50,8 @@ const AddApartmentScreen = () => {
     e.preventDefault();
     const formData = new FormData(e.target),
       formDataObj = Object.fromEntries(formData.entries());
-    setErrors(validateAll(formDataObj));
-    dispatch(setOffer(formDataObj));
+    const validated = validateAll(formDataObj);
+    if (validated) dispatch(setOffer(formDataObj));
   };
 
   const numberOfPeopleValue = createSelectValuesWithNumbers(MAX_NUMBER_OF_PEOPLE);

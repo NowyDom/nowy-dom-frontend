@@ -1,13 +1,15 @@
 import axios from 'axios';
 
+const BASE_URL = 'https://frozen-peak-70499.herokuapp.com/';
+
 const Endpoint = {
-  offers: 'offersURL'
+  offers: 'api/v1/offer'
 };
 
 export default class ApiClient {
   constructor() {
     this.API = axios.create({
-      baseURL: 'https://backend.endpoint'
+      baseURL: BASE_URL
     });
   }
 
@@ -16,7 +18,7 @@ export default class ApiClient {
       console.log('get offers');
       console.log(params);
       // await this.API.get(Endpoint.regions);
-      return [{test: 'test'}];
+      return [{ test: 'test' }];
     } catch (e) {
       throw e;
     }
@@ -26,11 +28,9 @@ export default class ApiClient {
     try {
       console.log('set offer');
       console.log(params);
-      // await this.API.post(Endpoint.regions);
+      await this.API.post(Endpoint.regions, params);
     } catch (e) {
       throw e;
     }
   }
-
-
 }
