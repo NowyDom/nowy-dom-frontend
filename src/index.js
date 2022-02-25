@@ -5,11 +5,18 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import ReduxThunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './rootReducer';
+import { api } from './services';
 
-const store = createStore(rootReducer, compose(applyMiddleware(ReduxThunk)));
+const thunkWithExtraArgument = {
+  api
+};
+
+const middlewares = [thunk.withExtraArgument(thunkWithExtraArgument)];
+
+const store = createStore(rootReducer, compose(applyMiddleware(...middlewares)));
 
 ReactDOM.render(
   <React.StrictMode>
