@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomeScreen = () => {
   return (
@@ -7,12 +8,20 @@ const HomeScreen = () => {
       <div className="container main-content">
         <div className="col-12">
           <div className="text-center justify-content-center d-flex flex-column flex-md-row mb-4">
-            <div className="btn w-100 btn-danger btn-lg" style={{ margin: 15 }}>
+            <Link
+              to="/find"
+              className="btn w-100 btn-danger btn-lg"
+              style={{ margin: 15 }}
+            >
               Znajdź mieszkanie
-            </div>
-            <div className="btn w-100 btn-success btn-lg" style={{ margin: 15 }}>
+            </Link>
+            <Link
+              to="add"
+              className="btn w-100 btn-success btn-lg"
+              style={{ margin: 15 }}
+            >
               Zapewnij mieszkanie
-            </div>
+            </Link>
           </div>
           <div className="text-wrapper text-center">
             <h1 className="text-center">
