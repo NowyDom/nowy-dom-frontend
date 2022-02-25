@@ -18,6 +18,7 @@ const ResultView = () => {
             <a
               href={`https://wp.pl`}
               target="_blank"
+              rel="noreferrer"
               className="btn btn-warning btn-sm"
               style={{ marginLeft: 10 }}
             >

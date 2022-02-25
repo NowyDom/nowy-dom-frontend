@@ -2,7 +2,7 @@ import Select from 'react-select';
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { MAX_NUMBER_OF_PEOPLE_LIST } from './consts';
+import { MAX_NUMBER_OF_PEOPLE_LIST } from '../consts';
 
 const CITIES_MOCK = [
   { value: 'warszawa', label: 'warszawa' },
