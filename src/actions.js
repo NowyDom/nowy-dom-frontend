@@ -14,3 +14,14 @@ export const getOffers = params => {
     }
   };
 };
+
+export const setOffer = params => {
+  return async (dispatch, getState, { api }) => {
+    try {
+      await api.setOffer(params);
+    } catch (e) {
+      console.log('set offer error: ', e);
+    }
+    dispatch(getOffers());
+  };
+};

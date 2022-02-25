@@ -1,4 +1,4 @@
-export const MAX_NUMBER_OF_PEOPLE_LIST = 20;
+export const MAX_NUMBER_OF_PEOPLE = 20;
 
 export const REGIONS_LIST = [
   {
