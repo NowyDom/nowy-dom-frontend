@@ -25,9 +25,11 @@ const HomeScreen = () => {
           </div>
           <div className="text-wrapper text-center">
             <h1 className="text-center">
-              Rosja wypowiedziała wojnę Ukrainie i nikczemnie ostrzeliwuje spokojne
-              miasta.
+              Razem pid dachem (w trakcie testowania)
             </h1>
+            <h5 className="text-center">
+              Serwis ma na celu łączenie uchodźców z ukrainy do polski oraz osób posiadających wolny nocleg w polsce
+            </h5>
             <h5>Tysiące osób przechodzą poprzez granicy codziennie.</h5>
             <h5 className="mb-4">
               Jeśli posiadasz mieszkanie lub pokój który mógłbyś bezplatnie zaoferować ukraincom, wciśnij "Zapewnij
