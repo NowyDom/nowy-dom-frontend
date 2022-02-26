@@ -147,7 +147,7 @@ const AddApartmentScreen = () => {
                     placeholder="Lokalizacja, np. ul. Kijowska"
                     {...register('location')}
                   />
-                  <FieldError show={errors?.location} message="Wymagane" />
+                  <FieldError show={errors?.location} message="Wymagane, max. 200 znaków" />
                 </Form.Group>
                 <Form.Group className="form-input pt-3">
                   <Form.Label>
