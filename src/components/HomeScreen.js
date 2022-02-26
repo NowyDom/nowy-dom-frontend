@@ -36,7 +36,7 @@ const HomeScreen = () => {
               mieszkanie".
             </h5>
             <h5>
-              Baaaardzo inspirowane ukraińską platformą <a href="https://prykhystok.in.ua/">Прихрысток</a>
+              Baaaardzo inspirowane ukraińską platformą <a href="https://prykhystok.in.ua/">Прихисток</a>
             </h5>
             <h5>
               Próbujemy skontaktować się z nimi oraz skonsolidować siły. Jak ktoś posiada kontakt do twórców platformy -
