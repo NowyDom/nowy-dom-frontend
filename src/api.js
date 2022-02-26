@@ -13,9 +13,11 @@ export default class ApiClient {
     });
   }
 
-  async getOffers(params) {
+  async getOffers(params = {}) {
     try {
-      const response = await this.API.get(Endpoint.offers);
+      const response = await this.API.get(Endpoint.offers, {
+        params: { region: params?.region }
+      });
       return response.data;
     } catch (e) {
       throw e;
