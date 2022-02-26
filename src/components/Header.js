@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container">
         <div className="d-flex header-height align-items-center justify-content-between">
           <Link to="/" className="logo">
-            <h4>razempiddachem</h4>
+            <h4>Razem pid dachem</h4>
           </Link>
           <div className="menu">
             <Link to="find" className="btn btn-danger">

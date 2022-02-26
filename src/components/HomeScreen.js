@@ -11,14 +11,14 @@ const HomeScreen = () => {
             <Link
               to="/find"
               className="btn w-100 btn-danger btn-lg"
-              style={{ margin: 15 }}
+              style={{margin: 15}}
             >
               Znajdź mieszkanie
             </Link>
             <Link
               to="add"
               className="btn w-100 btn-success btn-lg"
-              style={{ margin: 15 }}
+              style={{margin: 15}}
             >
               Zapewnij mieszkanie
             </Link>
@@ -28,22 +28,16 @@ const HomeScreen = () => {
               Rosja wypowiedziała wojnę Ukrainie i nikczemnie ostrzeliwuje spokojne
               miasta.
             </h1>
-            <h5>Tysiące są ewakuowane do bezpieczniejszych obszarów.</h5>
-            <h5>Większość z nich nie ma gdzie przejść przez trudne czasy.</h5>
+            <h5>Tysiące osób przechodzą poprzez granicy codziennie.</h5>
             <h5 className="mb-4">
-              Dzisiaj wszyscy musimy być jak najbardziej zjednoczeni, zjednoczeni i
-              wspierający.
-            </h5>
-            <h5 className="mb-4">
-              Jeśli masz pokój, w którym jesteś gotowy do schronienia potrzebujących
-              współobywateli - kliknij „Zapewnij mieszkanie” .
-            </h5>
-            <h5 className="mb-4">
-              Jeśli potrzebujesz schronienia - kliknij "Znajdź mieszkanie" .
+              Jeśli posiadasz mieszkanie lub pokój który mógłbyś bezplatnie zaoferować ukraincom, wciśnij "Zapewnij
+              mieszkanie".
             </h5>
             <h5>
-              Konsoliduj się, pomagaj i wspieraj się nawzajem. Wygrajmy razem! Przekaż
-              informacje o inicjatywie znajomym.
+              Baaaardzo inspirowane ukraińską platformą <a href="https://prykhystok.in.ua/">Прихрысток</a>
+            </h5>
+            <h5>
+              Próbujemy skontaktować się z nimi.
             </h5>
           </div>
         </div>
