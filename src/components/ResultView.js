@@ -8,7 +8,7 @@ function Result({
   googleMapsLink
 }) {
   return (
-    <div className="tw-bg-white tw-shadow tw-overflow-hidden sm:tw-rounded-lg">
+    <div className="filters-wrapper tw-bg-white tw-shadow tw-overflow-hidden sm:tw-rounded-lg">
       <div className="tw-px-4 tw-py-5 sm:tw-px-6">
         <h3 className="tw-text-lg tw-leading-6 tw-font-medium tw-text-gray-900">
           Region: {region}
