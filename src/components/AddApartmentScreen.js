@@ -20,7 +20,7 @@ const formSchema = yup
     region: yup.object().required(),
     phone: yup.string().min(5).max(15).required(),
     email: yup.string().email().min(5).max(55).required(),
-    location: yup.string().min(5).max(15).required(),
+    location: yup.string().min(5).max(200).required(),
     mapLink: yup.string().url().optional(),
     info: yup.string().max(300)
   })
